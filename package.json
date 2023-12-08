@@ -2,10 +2,21 @@
   "name": "react-alldate-picker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "microbundle",
+    "dev": "microbundle watch"
   },
   "author": "arthurhui",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "microbundle": "^0.15.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurHui/react-alldate-picker.git"
+  }
 }
