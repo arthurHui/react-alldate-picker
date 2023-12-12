@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import ReactDOM from "react-dom";
-import "./DatePicker.css";
-import { todayTimestamp } from "../constants";
+import "./DatePicker.module.css";
+import { todayTimestamp } from "../../constants";
 import {
     isCurrentDay,
     isSelectedDay,
@@ -10,8 +10,8 @@ import {
     getMonthStr,
     getDateFromDateString,
     isSameDate,
-} from "../utilities";
-import { ArrowDoubleLeftIcon, CalendarIcon, ArrowLeftIcon, ArrowRightIcon, ArrowDoubleRightIcon } from "../components/Icon"
+} from "../../utilities";
+import { ArrowDoubleLeftIcon, CalendarIcon, ArrowLeftIcon, ArrowRightIcon, ArrowDoubleRightIcon } from "../Icon.jsx"
 
 const today = new Date();
 
