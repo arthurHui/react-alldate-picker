@@ -1,13 +1,13 @@
 {
   "name": "react-alldate-picker",
-  "version": "1.0.28",
+  "version": "1.0.32",
   "description": "",
   "source": "src/index.js",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
   "unpkg": "dist/index.umd.js",
   "scripts": {
-    "build": "microbundle"
+    "build": "rmdir /s /q dist && npx rollup -c"
   },
   "author": "arthurhui",
   "license": "MIT",
@@ -20,8 +20,8 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.5",
     "@rollup/plugin-terser": "^0.4.4",
+    "autoprefixer": "^10.4.16",
     "cssnano": "^6.0.1",
-    "microbundle": "^0.15.1",
     "postcss-cssnext": "^3.1.1",
     "postcss-nested": "^6.0.1",
     "postcss-simple-vars": "^7.0.1",
@@ -32,7 +32,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "webpack-cli": "^5.1.4"
+    "rollup-plugin-typescript2": "^0.36.0"
   },
   "repository": {
     "type": "git",

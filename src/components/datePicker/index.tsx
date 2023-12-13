@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import ReactDOM from "react-dom";
-import "./DatePicker.module.css";
-import { todayTimestamp } from "../../constants";
+import "./DatePicker.css";
+import { todayTimestamp } from "../../constants.js";
 import {
     isCurrentDay,
     isSelectedDay,
@@ -10,7 +10,7 @@ import {
     getMonthStr,
     getDateFromDateString,
     isSameDate,
-} from "../../utilities";
+} from "../../utilities.js";
 import { ArrowDoubleLeftIcon, CalendarIcon, ArrowLeftIcon, ArrowRightIcon, ArrowDoubleRightIcon } from "../Icon.jsx"
 
 const today = new Date();
@@ -71,7 +71,7 @@ const Calendar = ({
     );
 };
 
-const DatePicker = (props) => {
+export const DatePicker = (props) => {
     const {
         onChange,
         minDate = new Date("0001-01-01"),
@@ -333,5 +333,3 @@ const DatePicker = (props) => {
         </div>
     );
 };
-
-export default DatePicker;
