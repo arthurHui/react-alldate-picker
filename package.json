@@ -1,6 +1,6 @@
 {
   "name": "react-alldate-picker",
-  "version": "1.0.32",
+  "version": "1.0.38",
   "description": "",
   "source": "src/index.js",
   "main": "dist/index.js",
@@ -10,6 +10,20 @@
     "build": "rmdir /s /q dist && npx rollup -c"
   },
   "author": "arthurhui",
+  "keywords": [
+    "calendar",
+    "date",
+    "date-picker",
+    "month-picker",
+    "react"
+  ],
+  {
+    "bugs": {
+      "url": "https://github.com/arthurHui/react-alldate-picker/issues",
+      "email": "arthurhui1999@gmail.com"
+    }
+  },
+  "homepage": "https://github.com/arthurHui/react-alldate-picker#readme",
   "license": "MIT",
   "devDependencies": {
     "@babel/preset-react": "^7.23.3",

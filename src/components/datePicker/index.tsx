@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useMemo } from "react";
+import React, { useEffect, useState, useRef, useMemo, forwardRef } from "react";
 import ReactDOM from "react-dom";
 import "./DatePicker.css";
 import { todayTimestamp } from "../../constants.js";
@@ -71,7 +71,7 @@ const Calendar = ({
     );
 };
 
-export const DatePicker = (props) => {
+export const DatePicker = forwardRef(function DatePicker(props, ref) {
     const {
         onChange,
         minDate = new Date("0001-01-01"),
@@ -81,10 +81,11 @@ export const DatePicker = (props) => {
         icon,
         footer,
         onClose,
-        placeholder = "selecte date"
+        placeholder = "selecte date",
+        ...otherProps
     } = props;
 
-    const ref = useRef(null);
+    const containerRef = ref || useRef(null);
     const inputRef = useRef(null);
 
     const [isOpen, setIsOpen] = useState(false);
@@ -110,7 +111,7 @@ export const DatePicker = (props) => {
     }, [maxDate]);
 
     const addBackDrop = (e) => {
-        if (isOpen && !ReactDOM.findDOMNode(ref.current).contains(e.target)) {
+        if (isOpen && !ReactDOM.findDOMNode(containerRef.current).contains(e.target)) {
             closePicker();
         }
     };
@@ -209,9 +210,10 @@ export const DatePicker = (props) => {
     }, [isOpen]);
 
     return (
-        <div ref={ref} className="DatePicker">
+        <div ref={containerRef} className="DatePicker">
             <div className="mdp-input" onClick={openPicker}>
                 <input
+                    {...otherProps}
                     type="text"
                     ref={inputRef}
                     onChange={(e) => updateDateFromInput(e.target.value)}
@@ -332,4 +334,4 @@ export const DatePicker = (props) => {
             </div>
         </div>
     );
-};
+});
